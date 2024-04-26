@@ -1,0 +1,34 @@
+package com.eliel.infinite
+
+Import
+
+class MainActivity : ComponetActivity(){
+    override fun onCreate(SavedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        setContent{
+           infiniteComposeTheme {
+
+           }
+      }
+  }
+}
+
+@Composable
+fun InfiniteScreen(){
+     Box(
+     modifier = Modifier.fillmaxsize().background(Color.Blue)
+  ){
+     TextWithIcon()
+    }
+}
+
+@Composable
+fun TextWithIcon() {
+     Row(modifier = Modifier.padding(16.dp)){
+         Text(
+              text = "Infinite",
+               fontWeight = FontWeight.Bold
+         )
+          Icon(Icons.Default.AccountCircle, contentDescription = "Ícone")
+   }
+}
