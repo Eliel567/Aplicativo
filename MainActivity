@@ -1,34 +1,52 @@
 package com.eliel.infinite
 
-Import
-
-class MainActivity : ComponetActivity(){
-    override fun onCreate(SavedInstanceState: Bundle?){
-        super.onCreate(savedInstanceState)
-        setContent{
-           infiniteComposeTheme {
-
-           }
-      }
-  }
-}
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import java.io.File
 
 @Composable
-fun InfiniteScreen(){
-     Box(
-     modifier = Modifier.fillmaxsize().background(Color.Blue)
-  ){
-     TextWithIcon()
+fun InfiniteScreen() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Blue)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = TextAlign.Center
+        ) {
+            Text(
+                text = "\u221E", // Código Unicode para o símbolo do infinito
+                style = TextStyle(
+                    fontFamily = FontFamily(Font(File("font_path.ttf"))), // Substitua "font_path.ttf" pelo caminho da sua fonte que inclui o símbolo do infinito
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 72.sp,
+                    color = Color.White
+                ),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxSize()
+            )
+            Text(
+                text = "infinite",
+                style = TextStyle(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    color = Color.White
+                )
+            )
+        }
     }
-}
-
-@Composable
-fun TextWithIcon() {
-     Row(modifier = Modifier.padding(16.dp)){
-         Text(
-              text = "Infinite",
-               fontWeight = FontWeight.Bold
-         )
-          Icon(Icons.Default.AccountCircle, contentDescription = "Ícone")
-   }
 }
