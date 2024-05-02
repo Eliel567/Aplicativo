@@ -1,0 +1,87 @@
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun MyJetpackComposeLayout() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = Color(0xFFF5F5F5) // background color hex code
+    ) {
+        Column {
+            TopAppBar()
+            Text(
+                text = "João da Silva",
+                style = MaterialTheme.typography.h5,
+                modifier = Modifier.padding(start = 16.dp, top = 17.dp)
+            )
+            Spacer(modifier = Modifier.weight(1f))
+            BottomAppBar()
+            LeadingIcon()
+            FloatingActionButton()
+        }
+    }
+}
+
+@Composable
+fun TopAppBar() {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(64.dp),
+        color = Color(0xFFFEF7FF) // background color hex code
+    ) {
+        // Content of your top app bar
+    }
+}
+
+@Composable
+fun BottomAppBar() {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(80.dp),
+        color = Color(0xFFF3EDF7) // background color hex code
+    ) {
+        // Content of your bottom app bar
+    }
+}
+
+@Composable
+fun LeadingIcon() {
+    Surface(
+        modifier = Modifier
+            .width(262.dp)
+            .height(48.dp),
+        shape = CircleShape,
+        color = Color.Gray // icon background color
+    ) {
+        // Content of your leading icon
+    }
+}
+
+@Composable
+fun FloatingActionButton() {
+    Surface(
+        modifier = Modifier
+            .size(56.dp),
+        shape = CircleShape,
+        color = Color.Black // FAB color
+    ) {
+        // Content of your FAB
+    }
+}
+
+@Preview
+@Composable
+fun PreviewMyJetpackComposeLayout() {
+    MyJetpackComposeLayout()
+}
