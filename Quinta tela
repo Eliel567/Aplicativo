@@ -1,0 +1,81 @@
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun MyJetpackComposeLayout() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = Color.White
+    ) {
+        Column(
+            modifier = Modifier.padding(4.dp)
+        ) {
+            TopAppBar()
+            Frame2Content()
+            BottomAppBar()
+            LeadingIcon()
+        }
+    }
+}
+
+@Composable
+fun TopAppBar() {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(64.dp),
+        color = Color(0xFFFEF7FF) // color hex code
+    ) {
+        // Content of your top app bar
+    }
+}
+
+@Composable
+fun Frame2Content() {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(516.dp)
+            .padding(vertical = 100.dp, horizontal = 8.dp),
+        color = Color.Transparent
+    ) {
+        // Content of your frame 2
+    }
+}
+
+@Composable
+fun BottomAppBar() {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(80.dp)
+            .padding(bottom = 23.dp),
+        color = Color(0xFFF3EDF7) // color hex code
+    ) {
+        // Content of your bottom app bar
+    }
+}
+
+@Composable
+fun LeadingIcon() {
+    Surface(
+        modifier = Modifier
+            .width(262.dp)
+            .height(48.dp)
+    ) {
+        // Content of your leading icon
+    }
+}
+
+@Preview
+@Composable
+fun PreviewMyJetpackComposeLayout() {
+    MyJetpackComposeLayout()
+}
