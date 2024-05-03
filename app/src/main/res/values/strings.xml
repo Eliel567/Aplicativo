@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Projeto_AppI</string>
+    <string name="iniciar_sessao">Begin Session</string>
+    <string name="criar_conta">Create an account</string>
+</resources>
