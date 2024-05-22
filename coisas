@@ -1,0 +1,4 @@
+val localContext = LocalContext.current
+    val successMessage = stringResource(R.string.message_register_success)
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
