@@ -18,4 +18,19 @@ class UserRepository(context: Context) {
         }
         return db.insert(table_name,"",contentValues)
     }
+
+    fun findOne(user: User):User?{
+        val cursor = db.query(table_name, arrayOf("id"),"email = ? and password = ?", arrayOf(user.email,user.password),null,null,null)
+        val result = cursor.moveToFirst()
+        if (!result){
+            return null //Caso não tenha encontrado
+        }
+        val id = cursor.getLong(0)
+        cursor.close()
+        return User(
+            id,
+            user.email,
+            user.password
+        )
+    }
 }

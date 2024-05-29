@@ -7,6 +7,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -16,6 +17,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.projeto_appi.R
+import com.example.projeto_appi.components.CustomTextField
+import androidx.compose.material3.Text
+fun Image(painterResource: Painter, s: Any, modifier: Any, function: () -> Unit) {
+    TODO("Not yet implemented")
+}
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -27,10 +33,20 @@ fun SecondScreen(navController : NavController){
     val successMessage = stringResource(R.string.message_register_success)
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember {SnackbarHostState()}
+    val welcomeMessage = stringResource(R.string.message_register_success)
 
     Scaffold {
-        snackbarHost = { SnackbarHost((snackbarHostState)) }
+        var snackbarHost = { SnackbarHost((snackbarHostState))
+        }
     }
+    CustomTextField(
+        label = stringResource((R.string.input_email)),
+        value ="",
+        onValueChange = {
+            value ->
+            var email = value
+        },
+    )
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally

@@ -3,6 +3,11 @@ package com.example.projeto_appi.models
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import java.text.Collator.PRIMARY
+
+private operator fun Any.invoke(any: Any, any1: Any, any2: Any) {
+    TODO("Not yet implemented")
+}
 
 class UserDAO(context:Context) : SQLiteOpenHelper
     (context,db_name,null,db_version){
@@ -13,6 +18,9 @@ class UserDAO(context:Context) : SQLiteOpenHelper
         }
 
     override fun onCreate(db: SQLiteDatabase) {
+        val id
+        val AUTOINCREMENT = null
+        val email = null
         db.execSQL("CREATE TABLE $table_name") (id INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT, password TEXT)
     }
 
