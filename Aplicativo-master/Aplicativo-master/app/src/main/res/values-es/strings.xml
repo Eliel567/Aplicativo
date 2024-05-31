@@ -4,4 +4,7 @@
     <string name="iniciar_sessao">Iniciar Sesión</string>
     <string name="criar_conta">Crea una cuenta</string>
     <string name="input_email"/>
+    <string name="conecte"/>
+    <string name="conecte_se"/>
+    <string name="log_in"/>
 </resources>

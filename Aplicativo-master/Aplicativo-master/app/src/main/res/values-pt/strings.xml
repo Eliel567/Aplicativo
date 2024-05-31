@@ -4,4 +4,5 @@
     <string name="iniciar_sessao">Iniciar Sessão</string>
     <string name="criar_conta">Criar conta</string>
     <string name="input_email"/>
+    <string name="log_in"/>Conecte-se
 </resources>
